@@ -8,7 +8,7 @@ module Xinge
       super
     end
     def pushToSingleDevice(token, title, content, params={}, custom_content={})
-      self.push_single_device(token, 1, build_simple_message(title, content, custom_content), params.merge({environment: ENV_MAP[Xinge.config[:env]]}))
+      self.push_single_device(token, 0, build_simple_message(title, content, custom_content), params.merge({environment: ENV_MAP[Xinge.config[:env]]}))
     end
     def pushToAllDevice(title, content, params={}, custom_content={})
       self.push_all_device(1, build_simple_message(title, content, custom_content), params.merge({environment: ENV_MAP[Xinge.config[:env]]}))
