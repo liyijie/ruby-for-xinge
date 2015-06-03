@@ -40,7 +40,6 @@ module Xinge
         message: message,
         message_type: message_type
         })
-      puts "message params is:#{params}"
       self.send_request('push','single_device',params)
     end
 
@@ -146,6 +145,7 @@ module Xinge
       options = { body: params }
       
       result = JSON.parse(self.class.send(HTTP_METHOD,self.get_request_url(type,method), options))
+      puts "send url:#{self.get_request_url(type,method)}, options is:#{options}"
       [result["ret_code"], result["err_msg"]]
     end
 
