@@ -40,6 +40,7 @@ module Xinge
         message: message,
         message_type: message_type
         })
+      puts "message params is:#{params}"
       self.send_request('push','single_device',params)
     end
 
